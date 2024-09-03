@@ -10,7 +10,7 @@ namespace API_Hangfire.Controllers
         //fire and foregt job
         [HttpPost]
         public IActionResult Welcome()
-        {
+        { 
             var jobId = BackgroundJob.Enqueue(() => sendWelcomeEmail("welcome to our app"));
             return Ok($"{jobId}welcome email send to the user");
         }
